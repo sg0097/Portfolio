@@ -134,6 +134,17 @@ section{padding-block:68px;border-top:1px solid var(--line)}
 .card[data-k="job"]{--c:var(--amber)}
 .card[data-k="groc"]{--c:var(--green)}
 .card[data-k="fraud"]{--c:var(--coral)}
+.card[data-k="room"]{--c:var(--sky)}
+.card[data-k="fam"]{--c:var(--coral)}
+.card[data-k="field"]{--c:var(--green)}
+
+/* photos */
+.photos{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center}
+@media (max-width:760px){.photos{grid-template-columns:1fr}}
+.photos figure{margin:0;width:min(100%,380px);aspect-ratio:4/5;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.photos img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 38%;transition:transform .6s ease}
+.photos figure:hover img{transform:scale(1.04)}
+.photos p{color:var(--muted);max-width:44ch;font-size:17px;line-height:1.6}
 
 /* skills */
 .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
@@ -214,7 +225,7 @@ form.cf{display:grid;gap:12px;background:var(--surface);border:1px solid var(--l
   <div class="wrap">
     <a class="mark" href="#top"><i>S</i>Shivam Gupta</a>
     <nav class="nav" id="nav">
-      <a href="#about">About</a><a href="#work">Work</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#work">Work</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#photos">Photos</a><a href="#contact">Contact</a>
     </nav>
     <button class="modebtn" id="mode" aria-label="Switch to light mode" title="Light / dark"></button>
   </div>
@@ -281,6 +292,78 @@ form.cf{display:grid;gap:12px;background:var(--surface);border:1px solid var(--l
       </div>
     </div>
     <div class="projects" id="cards">
+      <article class="card" data-k="room" data-t="web" tabindex="0" aria-label="CodeRoom. Press Enter to flip.">
+        <div class="inner">
+          <div class="face">
+            <div class="preview" data-k="room"></div>
+            <div class="kind">Web app</div>
+            <h3>CodeRoom</h3>
+            <p class="sub">Challenge a friend with an engineering problem, then compare answers.</p>
+            <div class="tags"><span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">Real-time</span><span class="tag">Google sign-in</span></div>
+            <div class="acts"><a class="btn live" data-live="room" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn" href="https://github.com/sg0097/Code-Room" target="_blank" rel="noopener">GitHub ↗</a></div>
+            <div class="hint"><span>Click card for details</span><b>↻</b></div>
+          </div>
+          <div class="face back">
+            <div class="kind" style="margin-top:0">CodeRoom</div>
+            <ul>
+              <li>Send a friend a challenge. Solve it alone or together in a live room.</li>
+              <li>Answers stay hidden until everyone submits, then you compare side by side.</li>
+              <li>A multi-file code editor, AI hints and blind peer review.</li>
+              <li>A problem library and interview experiences from target companies.</li>
+            </ul>
+            <div class="row"><a class="btn live" data-live="room" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn gh" href="https://github.com/sg0097/Code-Room" target="_blank" rel="noopener">GitHub ↗</a><button class="btn back-btn">↻ Back</button></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-k="fam" data-t="web" tabindex="0" aria-label="AI Family Care. Press Enter to flip.">
+        <div class="inner">
+          <div class="face">
+            <div class="preview" data-k="fam"></div>
+            <div class="kind">Web app</div>
+            <h3>AI Family Care</h3>
+            <p class="sub">Parents reply on WhatsApp. Children see how they are doing.</p>
+            <div class="tags"><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">WhatsApp</span></div>
+            <div class="acts"><a class="btn live" data-live="fam" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn" href="https://github.com/sg0097/Ai_family_app" target="_blank" rel="noopener">GitHub ↗</a></div>
+            <div class="hint"><span>Click card for details</span><b>↻</b></div>
+          </div>
+          <div class="face back">
+            <div class="kind" style="margin-top:0">AI Family Care</div>
+            <ul>
+              <li>Medicine and routine reminders go out on WhatsApp.</li>
+              <li>Replies are stored as records: readings, water, feelings.</li>
+              <li>A calm dashboard shows today’s status and what needs you.</li>
+              <li>Weekly report you can save as PDF for the doctor.</li>
+            </ul>
+            <div class="row"><a class="btn live" data-live="fam" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn gh" href="https://github.com/sg0097/Ai_family_app" target="_blank" rel="noopener">GitHub ↗</a><button class="btn back-btn">↻ Back</button></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-k="field" data-t="web" tabindex="0" aria-label="Field. Press Enter to flip.">
+        <div class="inner">
+          <div class="face">
+            <div class="preview" data-k="field"></div>
+            <div class="kind">Web app</div>
+            <h3>Field</h3>
+            <p class="sub">Walk-in interview drives across India, shown on a map.</p>
+            <div class="tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><span class="tag">Prisma</span></div>
+            <div class="acts"><a class="btn live" data-live="field" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn" href="https://github.com/sg0097/Field" target="_blank" rel="noopener">GitHub ↗</a></div>
+            <div class="hint"><span>Click card for details</span><b>↻</b></div>
+          </div>
+          <div class="face back">
+            <div class="kind" style="margin-top:0">Field</div>
+            <ul>
+              <li>An India map (three.js) shows where openings actually are.</li>
+              <li>State pages with a street map using Leaflet.</li>
+              <li>Each listing shows where it was found and what was checked.</li>
+              <li>Admin page and API protected by a key. Deployed on Render and Vercel.</li>
+            </ul>
+            <div class="row"><a class="btn live" data-live="field" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn gh" href="https://github.com/sg0097/Field" target="_blank" rel="noopener">GitHub ↗</a><button class="btn back-btn">↻ Back</button></div>
+          </div>
+        </div>
+      </article>
+
       <article class="card" data-k="job" data-t="web" tabindex="0" aria-label="Job Portal. Press Enter to flip.">
         <div class="inner">
           <div class="face">
@@ -313,7 +396,7 @@ form.cf{display:grid;gap:12px;background:var(--surface);border:1px solid var(--l
             <h3>Grocery Delivery</h3>
             <p class="sub">Order groceries and track them live on a map.</p>
             <div class="tags"><span class="tag">Next.js</span><span class="tag">MongoDB</span><span class="tag">NextAuth</span><span class="tag">Socket.io</span><span class="tag">Framer Motion</span></div>
-            <div class="acts"><a class="btn live" data-live="groc" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn" href="https://github.com/sg0097" target="_blank" rel="noopener">GitHub ↗</a></div>
+            <div class="acts"><a class="btn live" data-live="groc" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn" href="https://github.com/sg0097/mycart" target="_blank" rel="noopener">GitHub ↗</a></div>
             <div class="hint"><span>Click card for details</span><b>↻</b></div>
           </div>
           <div class="face back">
@@ -324,7 +407,7 @@ form.cf{display:grid;gap:12px;background:var(--surface);border:1px solid var(--l
               <li>Live tracking on a map and AI chat with Socket.io.</li>
               <li>Framer Motion animations, hosted on Vercel.</li>
             </ul>
-            <div class="row"><a class="btn live" data-live="groc" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn gh" href="https://github.com/sg0097" target="_blank" rel="noopener">GitHub ↗</a><button class="btn back-btn">↻ Back</button></div>
+            <div class="row"><a class="btn live" data-live="groc" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn gh" href="https://github.com/sg0097/mycart" target="_blank" rel="noopener">GitHub ↗</a><button class="btn back-btn">↻ Back</button></div>
           </div>
         </div>
       </article>
@@ -337,7 +420,7 @@ form.cf{display:grid;gap:12px;background:var(--surface);border:1px solid var(--l
             <h3>AI Fraud Detection</h3>
             <p class="sub">Spots suspicious payments and explains why.</p>
             <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Kafka</span><span class="tag">XGBoost</span><span class="tag">Isolation Forest</span><span class="tag">SHAP</span></div>
-            <div class="acts"><a class="btn live" data-live="fraud" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn" href="https://github.com/sg0097" target="_blank" rel="noopener">GitHub ↗</a></div>
+            <div class="acts"><a class="btn live" data-live="fraud" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn" href="https://github.com/sg0097/Fraud_detection_System" target="_blank" rel="noopener">GitHub ↗</a></div>
             <div class="hint"><span>Click card for details</span><b>↻</b></div>
           </div>
           <div class="face back">
@@ -347,7 +430,7 @@ form.cf{display:grid;gap:12px;background:var(--surface);border:1px solid var(--l
               <li>XGBoost and Isolation Forest find unusual payments.</li>
               <li>SHAP shows the reasons behind each result.</li>
             </ul>
-            <div class="row"><a class="btn live" data-live="fraud" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn gh" href="https://github.com/sg0097" target="_blank" rel="noopener">GitHub ↗</a><button class="btn back-btn">↻ Back</button></div>
+            <div class="row"><a class="btn live" data-live="fraud" href="#" target="_blank" rel="noopener">● Live demo</a><a class="btn gh" href="https://github.com/sg0097/Fraud_detection_System" target="_blank" rel="noopener">GitHub ↗</a><button class="btn back-btn">↻ Back</button></div>
           </div>
         </div>
       </article>
@@ -373,6 +456,14 @@ form.cf{display:grid;gap:12px;background:var(--surface);border:1px solid var(--l
     <div class="tl">
       <div><span class="yr">2021 – 2025</span><span class="loc">Mohali, Punjab</span><span><b>B.E. Computer Science</b><small>Chandigarh University</small></span></div>
       <div><span class="yr">2020 – 2021</span><span class="loc">Yamuna Nagar, Haryana</span><span><b>Class XII · 92.4%</b><small>DAV Public School</small></span></div>
+    </div>
+  </section>
+
+  <section id="photos" class="reveal">
+    <div class="shead"><div><div class="label">Photos</div><h2>Behind the code</h2></div></div>
+    <div class="photos">
+      <figure><img src="images/portrait.jpg" alt="Portrait of Shivam Gupta looking up, lit by a single beam of light" loading="lazy"></figure>
+      <p>When I’m not shipping features, I’m usually chasing a good idea, a hard problem or good light.</p>
     </div>
   </section>
 
@@ -468,12 +559,18 @@ $('#cf').addEventListener('submit',async e=>{e.preventDefault();
    image: a screenshot path or URL, e.g. "images/job-portal.png"
    Leave empty to show the built-in preview and a "coming soon" live button. */
 const PROJECTS={
+  room: {live:"https://coderoom-xvnt.onrender.com/", image:""},
+  fam:  {live:"", image:""},
+  field:{live:"", image:""},
   job:  {live:"", image:""},
   groc: {live:"", image:""},
   fraud:{live:"", image:""}
 };
 const chrome=(t)=>`<rect width="320" height="180" fill="#1B1B18"/><rect width="320" height="20" fill="#282824"/><circle cx="10" cy="10" r="3" fill="#D98C7E"/><circle cx="20" cy="10" r="3" fill="#D9B77E"/><circle cx="30" cy="10" r="3" fill="#A8C8A0"/><rect x="60" y="5" width="200" height="10" rx="5" fill="#1B1B18"/><text x="160" y="13" text-anchor="middle" font-family="monospace" font-size="7" fill="#A8A396">${t}</text>`;
 const MOCK={
+ room:chrome('coderoom/challenge')+`<rect x="12" y="30" width="146" height="140" rx="6" fill="#282824"/><rect x="20" y="38" width="70" height="7" rx="3" fill="#ECE7DE"/>`+[0,1,2,3,4].map(i=>`<rect x="20" y="${54+i*12}" width="${120-(i*17)%50}" height="5" rx="2.5" fill="#726E64"/>`).join('')+`<rect x="20" y="126" width="48" height="14" rx="7" fill="#A8C8A0"/><text x="44" y="136" text-anchor="middle" font-family="monospace" font-size="6" fill="#1B1B18">45 MIN</text><rect x="166" y="30" width="142" height="140" rx="6" fill="#1F1F1C"/>`+[0,1,2,3,4,5,6].map(i=>`<text x="172" y="${44+i*14}" font-family="monospace" font-size="6" fill="#726E64">${i+1}</text><rect x="184" y="${40+i*14}" width="${30+(i*37)%80}" height="5" rx="2.5" fill="${['#7EB8D9','#ECE7DE','#D9B77E'][i%3]}" opacity=".8"/>`).join('')+`<circle cx="290" cy="42" r="6" fill="#A8C8A0"/><circle cx="278" cy="42" r="6" fill="#D98C7E"/>`,
+ fam:chrome('familycare/today')+`<rect x="12" y="30" width="296" height="30" rx="6" fill="#282824"/><circle cx="28" cy="45" r="7" fill="#A8C8A0"/><rect x="42" y="38" width="90" height="6" rx="3" fill="#ECE7DE"/><rect x="42" y="49" width="60" height="5" rx="2.5" fill="#726E64"/><rect x="250" y="38" width="48" height="14" rx="7" fill="#35342F"/>`+[0,1,2].map(i=>`<rect x="${12+i*100}" y="68" width="96" height="40" rx="6" fill="#282824"/><rect x="${20+i*100}" y="76" width="40" height="5" rx="2.5" fill="#726E64"/><rect x="${20+i*100}" y="88" width="${50-i*10}" height="10" rx="3" fill="${['#A8C8A0','#D9B77E','#D98C7E'][i]}"/>`).join('')+`<rect x="12" y="116" width="296" height="54" rx="6" fill="#282824"/><path d="M24 156 L70 140 L116 148 L162 128 L208 138 L254 124 L296 132" fill="none" stroke="#7EB8D9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`,
+ field:chrome('field.app/india')+`<rect x="12" y="30" width="190" height="140" rx="6" fill="#282824"/><path d="M90 40 L120 44 L140 62 L132 84 L150 100 L128 112 L120 140 L104 162 L92 138 L76 112 L56 96 L66 74 L60 56 Z" fill="#35342F" stroke="#A8C8A0" stroke-width="1.5"/>`+[[96,70],[118,90],[88,104],[106,128],[72,86]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="4" fill="#A8C8A0"/><circle cx="${x}" cy="${y}" r="8" fill="#A8C8A0" opacity=".2"/>`).join('')+`<rect x="210" y="30" width="98" height="140" rx="6" fill="#282824"/>`+[0,1,2,3].map(i=>`<rect x="218" y="${38+i*32}" width="82" height="26" rx="5" fill="#1F1F1C"/><rect x="224" y="${44+i*32}" width="${54-i*6}" height="5" rx="2.5" fill="#ECE7DE"/><rect x="224" y="${54+i*32}" width="36" height="4" rx="2" fill="#726E64"/>`).join(''),
  job:chrome('jobportal.app/jobs')+`<rect x="12" y="30" width="296" height="20" rx="5" fill="#282824"/><rect x="20" y="37" width="90" height="6" rx="3" fill="#726E64"/><rect x="262" y="34" width="40" height="12" rx="4" fill="#A8C8A0"/>`+[0,1,2].map(i=>`<rect x="12" y="${58+i*38}" width="200" height="32" rx="6" fill="#282824"/><rect x="20" y="${64+i*38}" width="20" height="20" rx="5" fill="#35342F"/><rect x="48" y="${66+i*38}" width="${90-i*14}" height="6" rx="3" fill="#ECE7DE"/><rect x="48" y="${77+i*38}" width="60" height="5" rx="2.5" fill="#726E64"/><rect x="166" y="${68+i*38}" width="38" height="12" rx="6" fill="${i==0?'#A8C8A0':'#35342F'}"/>`).join('')+`<rect x="220" y="58" width="88" height="108" rx="6" fill="#282824"/><text x="230" y="74" font-family="monospace" font-size="7" fill="#A8A396">RESUME SCORE</text><circle cx="264" cy="110" r="22" fill="none" stroke="#35342F" stroke-width="6"/><circle cx="264" cy="110" r="22" fill="none" stroke="#A8C8A0" stroke-width="6" stroke-dasharray="110 138" transform="rotate(-90 264 110)"/><text x="264" y="114" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="12" fill="#ECE7DE">82</text><rect x="232" y="146" width="64" height="8" rx="4" fill="#35342F"/>`,
  groc:chrome('freshcart.vercel.app')+[0,1,2,3].map(i=>{const x=12+i*74;return `<rect x="${x}" y="30" width="66" height="84" rx="6" fill="#282824"/><circle cx="${x+33}" cy="58" r="16" fill="${['#A8C8A0','#D9B77E','#D98C7E','#A8C8A0'][i]}" opacity=".7"/><rect x="${x+8}" y="84" width="40" height="5" rx="2.5" fill="#ECE7DE"/><rect x="${x+8}" y="94" width="24" height="5" rx="2.5" fill="#726E64"/><rect x="${x+44}" y="92" width="14" height="14" rx="4" fill="#A8C8A0"/>`}).join('')+`<rect x="12" y="122" width="296" height="48" rx="6" fill="#282824"/><path d="M28 156 C 70 156, 80 132, 130 136 S 200 160, 240 146 S 280 132, 292 134" fill="none" stroke="#35342F" stroke-width="4" stroke-linecap="round"/><path d="M28 156 C 70 156, 80 132, 130 136 S 180 150, 196 152" fill="none" stroke="#A8C8A0" stroke-width="4" stroke-linecap="round"/><circle cx="196" cy="152" r="6" fill="#A8C8A0" stroke="#1B1B18" stroke-width="2"/><text x="28" y="134" font-family="monospace" font-size="7" fill="#A8A396">OUT FOR DELIVERY · 8 MIN</text>`,
  fraud:chrome('localhost:5000/dashboard')+`<rect x="12" y="30" width="92" height="36" rx="6" fill="#282824"/><text x="20" y="44" font-family="monospace" font-size="6.5" fill="#A8A396">SCORED</text><text x="20" y="59" font-family="sans-serif" font-weight="700" font-size="12" fill="#ECE7DE">12,480</text><rect x="114" y="30" width="92" height="36" rx="6" fill="#282824"/><text x="122" y="44" font-family="monospace" font-size="6.5" fill="#A8A396">FLAGGED</text><text x="122" y="59" font-family="sans-serif" font-weight="700" font-size="12" fill="#D98C7E">214</text><rect x="216" y="30" width="92" height="36" rx="6" fill="#282824"/><text x="224" y="44" font-family="monospace" font-size="6.5" fill="#A8A396">MODEL</text><text x="224" y="59" font-family="sans-serif" font-weight="700" font-size="12" fill="#A8C8A0">XGBoost</text><rect x="12" y="74" width="170" height="96" rx="6" fill="#282824"/>`+[0,1,2,3,4,5].map(i=>`<rect x="20" y="${82+i*14}" width="154" height="10" rx="3" fill="${i==2?'#3A2A26':'#1F1F1C'}"/><rect x="24" y="${85+i*14}" width="${40+(i*23)%50}" height="4" rx="2" fill="#726E64"/><rect x="150" y="${84+i*14}" width="20" height="6" rx="3" fill="${i==2?'#D98C7E':'#A8C8A0'}"/>`).join('')+`<rect x="190" y="74" width="118" height="96" rx="6" fill="#282824"/><text x="198" y="88" font-family="monospace" font-size="6.5" fill="#A8A396">SHAP · WHY FLAGGED</text>`+[62,48,30,-14,-22].map((w,i)=>`<line x1="250" y1="${96+i*14}" x2="250" y2="${106+i*14}" stroke="#35342F"/><rect x="${w>0?250:250+w}" y="${97+i*14}" width="${Math.abs(w)*.9}" height="8" rx="2" fill="${w>0?'#D98C7E':'#A8C8A0'}"/>`).join('')
@@ -506,10 +603,10 @@ $('#filters').onclick=e=>{const b=e.target.closest('button');if(!b)return;const 
 /* skills */
 const L=['C','C++','Python','JavaScript','HTML','CSS'];
 const F=['React.js','Next.js','React Native','Node.js','Express.js','Tailwind CSS','Kafka','Redis','PostgreSQL','MongoDB','Flask','Socket.io'];
-const uses={'Python':['fraud'],'JavaScript':['job','groc'],'HTML':['job','groc'],'CSS':['job','groc'],'React.js':['job'],'Next.js':['groc'],'Node.js':['job'],'Express.js':['job'],
- 'Kafka':['job','fraud'],'Redis':['job'],'PostgreSQL':['job'],'MongoDB':['groc'],'Flask':['fraud'],'Socket.io':['groc']};
+const uses={'Python':['fraud'],'JavaScript':['room','field','job','groc'],'HTML':['job','groc'],'CSS':['job','groc'],'React.js':['field','job'],'Next.js':['groc'],'Node.js':['room','fam','field','job'],'Express.js':['field','job'],
+ 'Kafka':['job','fraud'],'Redis':['fam','job'],'PostgreSQL':['fam','field','job'],'MongoDB':['groc'],'Flask':['fraud'],'Socket.io':['groc']};
 const note={'C':'I use C for problem solving practice.','C++':'C++ is my main language for DSA and coding contests.','React Native':'I use React Native for mobile apps.','Tailwind CSS':'Tailwind is my go-to for styling.'};
-const names={job:'Job Portal',groc:'Grocery Delivery',fraud:'AI Fraud Detection'};
+const names={room:'CodeRoom',fam:'AI Family Care',field:'Field',job:'Job Portal',groc:'Grocery Delivery',fraud:'AI Fraud Detection'};
 const mk=(el,a)=>el.innerHTML=a.map(s=>`<button data-s="${s}">${s}</button>`).join('');
 mk($('#skL'),L);mk($('#skF'),F);let cur=null;
 document.addEventListener('click',e=>{const b=e.target.closest('[data-s]');if(!b)return;cur=cur===b.dataset.s?null:b.dataset.s;
@@ -517,7 +614,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-s]');if(!b
   const u=cur?(uses[cur]||[]):[];
   $$('.card').forEach(c=>c.classList.toggle('lit',u.includes(c.dataset.k)));
   $$('.tag').forEach(t=>t.classList.toggle('hit',!!cur&&t.textContent.replace('.js','')===cur.replace('.js','')));
-  $('#skmsg').innerHTML=!cur?'Tap a skill to see which projects use it.':u.length?`<b>${cur}</b> is used in ${u.map(k=>names[k]).join(' and ')}. <a href="#projects">See it ↑</a>`:(note[cur]||`<b>${cur}</b>`)});
+  $('#skmsg').innerHTML=!cur?'Tap a skill to see which projects use it.':u.length?`<b>${cur}</b> is used in ${u.map(k=>names[k]).join(', ')}. <a href="#projects">See it ↑</a>`:(note[cur]||`<b>${cur}</b>`)});
 
 /* counters + reveal */
 const io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;io.unobserve(en.target);const el=en.target;
