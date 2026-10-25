@@ -190,7 +190,7 @@ footer{padding-block:28px 40px;color:var(--dim);font-size:13px;border-top:1px so
 @media (max-width:860px){.herogrid{grid-template-columns:1fr}.avatar{order:-1;width:120px!important;height:120px!important}.avatar .ini{font-size:40px!important}}
 .avatar{position:relative;width:280px;height:280px;border-radius:50%;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
 .avatar::after{content:"";position:absolute;inset:10px;border-radius:50%;border:1px dashed var(--line);pointer-events:none}
-.avatar img{width:100%;height:100%;object-fit:cover}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
 .avatar .ini{font:800 92px var(--display);letter-spacing:-.04em;color:var(--sky)}
 .about{display:grid;grid-template-columns:1.4fr 1fr;gap:36px}
 @media (max-width:760px){.about{grid-template-columns:1fr}}
@@ -527,7 +527,7 @@ if(!reduce){let wi=0,ci=words[0].length,del=true;const el=$('#tw');
    resume: path to your resume PDF, placed next to index.html
    form:   Formspree / Web3Forms endpoint, e.g. "https://formspree.io/f/abcd1234"
            (empty = the form opens the visitor's email app instead) */
-const SITE={photo:"", resume:"resume.pdf", form:""};
+const SITE={photo:"images/portrait.jpg", resume:"resume.pdf", form:""};
 if(SITE.photo){const im=new Image();im.alt='Shivam Gupta';im.src=SITE.photo;im.onload=()=>{$('#avatar').innerHTML='';$('#avatar').appendChild(im)}}
 $$('a[href="resume.pdf"]').forEach(a=>a.href=SITE.resume);
 
