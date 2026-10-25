@@ -462,7 +462,7 @@ form.cf{display:grid;gap:12px;background:var(--surface);border:1px solid var(--l
   <section id="photos" class="reveal">
     <div class="shead"><div><div class="label">Photos</div><h2>Behind the code</h2></div></div>
     <div class="photos">
-      <figure><img src="images/portrait.jpg" alt="Portrait of Shivam Gupta looking up, lit by a single beam of light" loading="lazy"></figure>
+      <figure><img src="images/profile.jpg" alt="Portrait of Shivam Gupta looking up, lit by a single beam of light" loading="lazy"></figure>
       <p>When I’m not shipping features, I’m usually chasing a good idea, a hard problem or good light.</p>
     </div>
   </section>
@@ -527,7 +527,7 @@ if(!reduce){let wi=0,ci=words[0].length,del=true;const el=$('#tw');
    resume: path to your resume PDF, placed next to index.html
    form:   Formspree / Web3Forms endpoint, e.g. "https://formspree.io/f/abcd1234"
            (empty = the form opens the visitor's email app instead) */
-const SITE={photo:"images/portrait.jpg", resume:"resume.pdf", form:""};
+const SITE={photo:"images/profile.jpg", resume:"resume.pdf", form:""};
 if(SITE.photo){const im=new Image();im.alt='Shivam Gupta';im.src=SITE.photo;im.onload=()=>{$('#avatar').innerHTML='';$('#avatar').appendChild(im)}}
 $$('a[href="resume.pdf"]').forEach(a=>a.href=SITE.resume);
 
